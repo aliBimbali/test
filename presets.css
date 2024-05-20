@@ -1,4 +1,4 @@
-/* CSSResets */
+/* CSS Presets */
 
 *, *::before, *::after{
   font: inherit;
@@ -13,34 +13,34 @@ html{
 /* forms */ 
 textarea,
 input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"]) {
-font: inherit;
-letter-spacing: inherit;
-word-spacing: inherit;
-border: 0.1em solid;
-padding: 0 0.2em;
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  border: 0.1em solid;
+  padding: 0 0.2em;
 }
 
 textarea:focus,
 input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"]):focus {
-outline: 0.15em solid #00f;
-box-shadow: 0 0 0.2em #00f;
+  outline: 0.15em solid #00f;
+  box-shadow: 0 0 0.2em #00f;
 }
 
 textarea[readonly],
 input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"])[readonly] {
-border-color: rgba(0, 0, 0, 0.42);
-border-left: none;
-border-top: none;
-border-right: none;
+  border-color: rgba(0, 0, 0, 0.42);
+  border-left: none;
+  border-top: none;
+  border-right: none;
 }
 
 textarea[required],
 input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"])[required] {
-border-left-width: 0.3em;
+  border-left-width: 0.3em;
 }
 textarea[aria-invalid="true"],
 textarea[aria-invalid="spelling"],
 textarea[aria-invalid="grammar"],
 input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"])[aria-invalid] {
-background: linear-gradient(135deg, rgba(255,0,0,1) 0, rgba(255,0,0,1) .4em, rgba(255,255,255,1) .4em);
+  background: linear-gradient(135deg, rgba(255,0,0,1) 0, rgba(255,0,0,1) .4em, rgba(255,255,255,1) .4em);
 }
