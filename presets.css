@@ -1,10 +1,9 @@
-/* CSS Resets */
-
-
-
 /* CSS Presets */
 
 *, *::before, *::after{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
   font: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
@@ -12,6 +11,17 @@
 
 html{
   font-size:clamp(12px, 100%, 24px)  /* o.ä.*/
+}
+
+body{
+  min-height: 100vh;
+}
+
+img,picture,svg,video{
+  max-width:100%;
+  height:auto;
+  vertical-align: middle;
+  font-style: italic;
 }
 
 /* forms */ 
@@ -45,6 +55,6 @@ input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="r
 textarea[aria-invalid="true"],
 textarea[aria-invalid="spelling"],
 textarea[aria-invalid="grammar"],
-input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"])[aria-invalid] {
+input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"])[aria-invalid] { 
   background: linear-gradient(135deg, rgba(255,0,0,1) 0, rgba(255,0,0,1) .4em, rgba(255,255,255,1) .4em);
 }
