@@ -37,6 +37,10 @@ body{
   min-height: 100vh;
 }
 
+header, main, footer{
+	container-type:inline-size;
+} 
+
 img,picture,svg,video{
   max-width:100%;
   height:auto;
