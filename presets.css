@@ -48,6 +48,10 @@ h1, h2, h3, h4, h5, h6{
 	text-wrap:balance;
 } 
 
+p, figcaption{
+	text-wrap:pretty;
+} 
+
 /* forms */ 
 textarea,
 input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"]) {
