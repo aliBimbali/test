@@ -62,7 +62,44 @@ ul[class] {
 	margin: 0;
 }
 
-/* forms */ 
+/* 
+MARK: <details> 
+- smooth open/close (currently only Chrome/Edge, see https://caniuse.com/?search=interpolate-size)
+- smooth marker rotation Animation
+*/
+
+details:not(.plain) {
+
+	@media (prefers-reduced-motion: no-preference) {
+		interpolate-size: allow-keywords;
+	}
+	summary {
+		list-style: none;
+		&::before{
+			content:'\e87a'; font-family: var(--font-icon); /* Change to whatever marker you like */
+			display:inline-block;
+			margin-right:.5em;
+			transition: transform .3s ease-in-out;
+		}
+	}
+
+	&::details-content {
+		block-size: 0;
+		overflow-y: clip;
+		transition: content-visibility .3s allow-discrete, block-size .3s;
+	}
+
+	&[open]{
+		& summary::before {transform: rotate(90deg);}
+		&::details-content {block-size: auto;}
+	}
+}
+
+
+/* 
+MARK: <form> 
+*/
+
 textarea,
 input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"]) {
   font: inherit;
