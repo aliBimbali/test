@@ -108,8 +108,10 @@ function snipSlider(element) {
 		let dragged = func.swipe.start - (e.type=='touchmove' ? e.changedTouches[0].pageX : e.pageX),
 			offset = parseFloat(func.slider.dataset.position) + dragged;
 		if(Math.abs(dragged) > func.options.treshold) func.slider.classList.add('dragged');
-		if(offset < func.slider.children[0].offsetLeft) offset += func.slider.children[(func.length / 2)].offsetLeft;
-		if(offset > func.slider.children[func.length - func.visibleElements - 1].offsetLeft) offset -= func.slider.children[(func.length / 2)].offsetLeft;
+		if(func.options.loop){
+			if(offset < func.slider.children[0].offsetLeft) offset += func.slider.children[(func.length / 2)].offsetLeft;
+			if(offset > func.slider.children[func.length - func.visibleElements - 1].offsetLeft) offset -= func.slider.children[(func.length / 2)].offsetLeft;
+		}
 		func.slider.style.transform = 'translateX('+(offset*-1)+'px)';
 	});
 
@@ -119,10 +121,10 @@ function snipSlider(element) {
 			offset = parseFloat(func.slider.dataset.position) + dragged,
 			oldItem = parseInt(func.slider.dataset.offset);
 		func.swipe.start = null;
-		
-		if(offset < func.slider.children[0].offsetLeft) offset += func.slider.children[(func.length / 2)].offsetLeft;
-		if(offset > func.slider.children[func.length - func.visibleElements - 1].offsetLeft) offset -= func.slider.children[(func.length / 2)].offsetLeft;
-		
+		if(func.options.loop){
+			if(offset < func.slider.children[0].offsetLeft) offset += func.slider.children[(func.length / 2)].offsetLeft;
+			if(offset > func.slider.children[func.length - func.visibleElements - 1].offsetLeft) offset -= func.slider.children[(func.length / 2)].offsetLeft;
+		}
 		if(func.slider.classList.contains('dragged')){
 			func.slider.classList.remove('dragged');
 		}
