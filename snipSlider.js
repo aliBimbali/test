@@ -145,14 +145,18 @@ function snipSlider(element) {
 	if(!!this.options.prev){
 		snip._(this.options.prev, function(){this.classList.add('snipSliderPrev');});
 		snip.on('click', this.options.prev, function(){
-			if(this.classList.contains('disabled')) return false;
+			let prevButton = this;
+			if(prevButton.classList.contains('disabled')) return false;
+			prevButton.classList.add('disabled'); setTimeout(function(){prevButton.classList.remove('disabled');}, 50);
 			func.setPos(-1);
 		});
 	}
 	if(!!this.options.next){
 		snip._(this.options.next, function(){this.classList.add('snipSliderNext');});
 		snip.on('click', this.options.next, function(){
-			if(this.classList.contains('disabled')) return false;
+			let nextButton = this;
+			if(nextButton.classList.contains('disabled')) return false;
+			nextButton.classList.add('disabled'); setTimeout(function(){nextButton.classList.remove('disabled');}, 50);
 			func.setPos(1);
 		});
 	}
